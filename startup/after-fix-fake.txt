@@ -1,0 +1,17 @@
+Logs: /Users/akshkaushik/Documents/Codex/2026-11-06/let-s-map-out-the-next/work/issue13/startup/cancellation-le601why
+{"build_exit": 8, "case": "interrupt", "container_removed": true, "container_stopped": true, "kill_called": false, "ownership_handback_called": true, "phase": "before_create"}
+PASS interrupt/before_create: cleanup, complete rebuild, and bazel clean
+{"build_exit": 8, "case": "interrupt", "container_removed": true, "container_stopped": true, "kill_called": true, "ownership_handback_called": true, "phase": "after_create"}
+PASS interrupt/after_create: cleanup, complete rebuild, and bazel clean
+{"build_exit": 8, "case": "interrupt", "container_removed": true, "container_stopped": true, "kill_called": true, "ownership_handback_called": true, "phase": "before_output"}
+PASS interrupt/before_output: cleanup, complete rebuild, and bazel clean
+{"build_exit": 8, "case": "interrupt", "container_removed": true, "container_stopped": true, "kill_called": true, "ownership_handback_called": true, "phase": "after_output"}
+PASS interrupt/after_output: cleanup, complete rebuild, and bazel clean
+{"build_exit": 1, "case": "sibling_failure", "container_removed": true, "container_stopped": true, "kill_called": false, "ownership_handback_called": true, "phase": "before_create"}
+PASS sibling_failure/before_create: cleanup, complete rebuild, and bazel clean
+{"build_exit": 1, "case": "sibling_failure", "container_removed": true, "container_stopped": true, "kill_called": true, "ownership_handback_called": true, "phase": "after_create"}
+PASS sibling_failure/after_create: cleanup, complete rebuild, and bazel clean
+{"build_exit": 1, "case": "sibling_failure", "container_removed": true, "container_stopped": true, "kill_called": true, "ownership_handback_called": true, "phase": "before_output"}
+PASS sibling_failure/before_output: cleanup, complete rebuild, and bazel clean
+{"build_exit": 1, "case": "sibling_failure", "container_removed": true, "container_stopped": true, "kill_called": true, "ownership_handback_called": true, "phase": "after_output"}
+PASS sibling_failure/after_output: cleanup, complete rebuild, and bazel clean

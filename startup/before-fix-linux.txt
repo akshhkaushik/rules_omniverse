@@ -1,0 +1,44 @@
+Logs: /var/tmp/rules-omniverse-issue13/startup/cancellation-qfitaaa9
+{"build_exit": 8, "case": "interrupt", "container_removed": false, "container_stopped": true, "containers_remaining": 1, "kill_called": true, "ownership_handback_called": true, "phase": "after_create"}
+Clean after failed cancellation cleanup: exit 0
+--- cancel.log ---
+Starting local Bazel server (8.4.2) and connecting to it...
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+Loading: 0 packages loaded
+Analyzing: target //:cancel_me (1 packages loaded, 0 targets configured)
+Analyzing: target //:cancel_me (1 packages loaded, 0 targets configured)
+
+INFO: Analyzed target //:cancel_me (7 packages loaded, 16 targets configured).
+
+Bazel caught interrupt signal; cancelling pending invocation.
+
+Target //:cancel_me failed to build
+Use --verbose_failures to see the command lines of failed build steps.
+ERROR: build interrupted
+INFO: Elapsed time: 12.011s, Critical Path: 0.47s
+INFO: 6 processes: 6 internal.
+ERROR: Build did NOT complete successfully
+
+--- failed-clean.log ---
+INFO: Starting clean (this may take a while). Use --async if the clean takes more than several minutes.
+
+14e68a3a70fc
+Traceback (most recent call last):
+  File "/var/tmp/rules-omniverse-issue13/repo/e2e/cancellation/run.py", line 242, in <module>
+    main()
+  File "/var/tmp/rules-omniverse-issue13/repo/e2e/cancellation/run.py", line 233, in main
+    run_case(root, args.repository.resolve(), bazel, mode, args.docker_image, phase)
+  File "/var/tmp/rules-omniverse-issue13/repo/e2e/cancellation/run.py", line 153, in run_case
+    raise AssertionError("cancelled action skipped cleanup")
+AssertionError: cancelled action skipped cleanup
+time="2026-11-08T11:32:39+05:30" level=fatal msg="exit status 1"

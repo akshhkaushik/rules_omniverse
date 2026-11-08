@@ -1,0 +1,50 @@
+Logs: /tmp/rules-omniverse-issue13/baseline-logs/cancellation-ykenxeuo
+Linux Docker: output before cancellation UID/GID 1234:1234
+{"build_exit": 8, "case": "interrupt", "container_stopped": false, "docker_running": true, "kill_called": false, "output_gid_after_cancellation": 1234, "output_uid_after_cancellation": 1234, "ownership_handback_called": false}
+Clean after failed cancellation cleanup: exit 36
+--- cancel.log ---
+Starting local Bazel server (8.4.2) and connecting to it...
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+Loading: 0 packages loaded
+Analyzing: target //:cancel_me (1 packages loaded)
+Analyzing: target //:cancel_me (1 packages loaded, 0 targets configured)
+Analyzing: target //:cancel_me (1 packages loaded, 0 targets configured)
+
+Analyzing: target //:cancel_me (7 packages loaded, 15 targets configured)
+
+INFO: Analyzed target //:cancel_me (7 packages loaded, 16 targets configured).
+
+Bazel caught interrupt signal; cancelling pending invocation.
+
+[6 / 6] no actions running
+Target //:cancel_me failed to build
+Use --verbose_failures to see the command lines of failed build steps.
+ERROR: build interrupted
+INFO: Elapsed time: 15.484s, Critical Path: 0.81s
+INFO: 6 processes: 6 internal.
+ERROR: Build did NOT complete successfully
+
+--- failed-clean.log ---
+INFO: Starting clean (this may take a while). Use --async if the clean takes more than several minutes.
+ERROR: fchmod (/tmp/rules-omniverse-issue13/baseline-logs/cancellation-ykenxeuo/interrupt/output/execroot/_main/bazel-out/aarch64-fastbuild/bin/cancel_me_out/rgb) (Operation not permitted)
+
+528492accf87
+Traceback (most recent call last):
+  File "/tmp/rules-omniverse-issue13/repo/e2e/cancellation/run.py", line 225, in <module>
+    main()
+  File "/tmp/rules-omniverse-issue13/repo/e2e/cancellation/run.py", line 217, in main
+    run_case(root, args.repository.resolve(), bazel, mode, args.docker_image)
+  File "/tmp/rules-omniverse-issue13/repo/e2e/cancellation/run.py", line 141, in run_case
+    raise AssertionError("cancelled action skipped cleanup")
+AssertionError: cancelled action skipped cleanup
+time="2026-11-08T10:54:48+05:30" level=fatal msg="exit status 1"

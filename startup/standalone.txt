@@ -1,0 +1,24 @@
+Starting local Bazel server (8.4.2) and connecting to it...
+Computing main repo mapping: 
+Loading: 
+Loading: 0 packages loaded
+Loading: 0 packages loaded
+Analyzing: 20 targets (1 packages loaded, 0 targets configured)
+Analyzing: 20 targets (1 packages loaded, 0 targets configured)
+
+INFO: Analyzed 20 targets (65 packages loaded, 917 targets configured).
+[74 / 76] 6 / 7 tests; [Prepa] Testing //:extension_metadata_test
+INFO: Found 13 targets and 7 test targets...
+INFO: Elapsed time: 5.448s, Critical Path: 1.15s
+INFO: 76 processes: 53 internal, 23 darwin-sandbox.
+INFO: Build completed successfully, 76 total actions
+//:container_gpu_result_test                                             PASSED in 0.1s
+//:extension_metadata_test                                               PASSED in 0.8s
+//:gpu_result_test                                                       PASSED in 0.1s
+//:stage_conversion_test                                                 PASSED in 0.2s
+//:stage_optimization_test                                               PASSED in 0.1s
+//:stage_profile_test                                                    PASSED in 0.1s
+//:stage_validation_test                                                 PASSED in 0.1s
+
+Executed 7 out of 7 tests: 7 tests pass.
+There were tests whose specified size is too big. Use the --test_verbose_timeout_warnings command line option to see which ones these are.
